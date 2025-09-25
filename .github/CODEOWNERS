@@ -1,0 +1,103 @@
+# Cada PR
+
+  # 1) Estrutura dos templates
+mkdir -p .github/ISSUE_TEMPLATE
+
+# 2) Template de Pull Request
+cat > .github/PULL_REQUEST_TEMPLATE.md <<'MD'
+## 🎯 Objetivo
+<!-- Resuma o que este PR faz. Ex.: "Adiciona pipeline de CI para lint/type-check" -->
+
+## ✅ Checklist
+- [ ] Código compila e passa nos checks (`pnpm lint`, `pnpm check`, `pnpm run format:check`)
+- [ ] Testado localmente (descreva como)
+- [ ] Documentação/README atualizados (se aplicável)
+- [ ] Sem mudanças de comportamento inesperadas
+- [ ] Commits no padrão convencional
+
+## 🔍 Como validar
+<!-- Passo-a-passo de validação manual. Ex.: comandos, rotas ou scripts a executar. -->
+
+## 📸 Prints/Logs (opcional)
+<!-- Anexe prints ou logs relevantes. -->
+
+## 🔗 Contexto / Issues relacionadas
+<!-- Closes #123, Relates to #456 -->
+MD
+
+# 3) Template de Issue: Bug
+cat > .github/ISSUE_TEMPLATE/bug_report.md <<'MD'
+---
+name: "🐞 Bug report"
+about: Reportar um problema
+title: "[BUG] "
+labels: bug
+assignees: ""
+---
+
+## Descrição
+<!-- Explique o problema de forma clara. -->
+
+## Passos para reproduzir
+1. 
+2. 
+3. 
+
+## Comportamento esperado
+<!-- O que deveria acontecer? -->
+
+## Evidências (prints/logs)
+<!-- Cole prints ou logs. -->
+
+## Ambiente
+- SO: [WSL/Ubuntu/Windows/Mac]
+- Node: `node -v`
+- pnpm: `pnpm -v`
+
+## Impacto
+<!-- Baixo/Médio/Alto e por quê. -->
+MD
+
+# 4) Template de Issue: Feature request
+cat > .github/ISSUE_TEMPLATE/feature_request.md <<'MD'
+---
+name: "🚀 Feature request"
+about: Sugerir uma melhoria/funcionalidade
+title: "[FEAT] "
+labels: enhancement
+assignees: ""
+---
+
+## Problema/Oportunidade
+<!-- Qual dor ou oportunidade essa feature resolve? -->
+
+## Proposta
+<!-- Descreva a solução sugerida. -->
+
+## Critérios de aceite
+- [ ] 
+- [ ] 
+- [ ] 
+
+## Considerações técnicas
+<!-- Arquitetura, pacotes, riscos, trade-offs. -->
+
+## Métricas de sucesso
+<!-- Como saberemos que deu certo? -->
+MD
+
+# 5) Config das issues (opcional, deixa a lista mais limpa)
+cat > .github/ISSUE_TEMPLATE/config.yml <<'YML'
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Dúvidas gerais
+    url: https://github.com/guilhermelimatech/setup-senior-pro/discussions
+    about: Use Discussions para perguntas e ideias abertas.
+YML
+
+# 6) (Opcional) CODEOWNERS – define revisores padrão
+mkdir -p .github
+cat > .github/CODEOWNERS <<'OWN'
+# Cada PR precisa de revisão do(s) owner(s) abaixo
+# Ex.: @guilhermelimatech
+* @guilhermelimatech
