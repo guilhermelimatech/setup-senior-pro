@@ -1,0 +1,11 @@
+{
+  "name": "setup-senior-pro",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:20",
+  "postCreateCommand": "corepack enable && pnpm i",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "eamodio.gitlens"],
+      "settings": { "editor.formatOnSave": true }
+    }
+  }
+}
